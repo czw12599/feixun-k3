@@ -15,7 +15,7 @@
 #
 #
 
-name: 触发R3G启动编译
+name: 触发compile启动编译
 on:
   workflow_dispatch:
     inputs:
@@ -52,7 +52,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event.repository.owner.id == github.event.sender.id
 
     name: 启动${{matrix.target}}编译

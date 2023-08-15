@@ -27,9 +27,17 @@ on:
         default: 'x86_64'
         type: choice
         options:
-         
-          - 'phicomm_k3'
-          
+          - 'aarch64'
+          - 'asus_rt-acrh17'
+          - 'd-team_newifi-d2'
+          - 'p2w_r619ac-128m'
+          - 'phicomm_k2p'
+          - 'x86_32'
+          - 'x86_64'
+          - 'xiaomi_mi-router-4a-gigabit'
+          - 'xiaomi_redmi-router-ac2100'
+          - 'xiaomi_redmi-router-ax6s'
+          - 'xiaoyu_xy-c5'
       CPU_SELECTION:
         description: 'CPU优选,增加编译速度'
         required: true
@@ -82,8 +90,8 @@ on:
 
 
 # 定时触发开启开始编译(把下面两个#去掉开启,时间设置请看定时开启编译说明)
-  schedule:
-  - cron: 30 8 5
+#  schedule:
+#   - cron: 35 18 * * *
 
 env:
   GITHUB_LINK: https://github.com/${{github.repository}}
@@ -108,7 +116,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [phicomm_k3]
+        target: [Lede]
         
         # 请勿对 target: [Lede] 做任何修改
         
